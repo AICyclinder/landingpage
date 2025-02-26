@@ -104,7 +104,7 @@ export function EarlyAccessForm() {
             value={formData.name}
             onChange={handleChange}
             required
-            className="rounded-md"
+            className="rounded-md text-foreground"
           />
         </div>
         
@@ -118,7 +118,7 @@ export function EarlyAccessForm() {
             value={formData.email}
             onChange={handleChange}
             required
-            className="rounded-md"
+            className="rounded-md text-foreground"
           />
         </div>
         
@@ -131,7 +131,7 @@ export function EarlyAccessForm() {
             value={formData.company}
             onChange={handleChange}
             required
-            className="rounded-md"
+            className="rounded-md text-foreground"
           />
         </div>
         
@@ -144,7 +144,7 @@ export function EarlyAccessForm() {
             value={formData.useCase}
             onChange={handleChange}
             rows={3}
-            className="rounded-md"
+            className="rounded-md text-foreground"
           />
         </div>
         
