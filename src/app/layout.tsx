@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AfricAI - AI Solutions for Health, Finance & More",
-  description: "Unlock AI for Health, Finance & More in Africa. Connect with AI-powered services via APIs or Agents, test AI models, and deploy AI seamlessly for your business.",
+  title: "AICyclinder - AI Solutions for Health, Finance & More",
+  description: "Unlock AI for Health, Finance & More in Africa with AICyclinder. Connect with AI-powered services via APIs or Agents, test AI models, and deploy AI seamlessly for your business.",
 };
 
 export default function RootLayout({

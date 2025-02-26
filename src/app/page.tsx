@@ -4,8 +4,12 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Brain, Building, CheckCircle, HeartPulse, LineChart, MessageSquare, ShieldCheck } from "lucide-react";
+import { EarlyAccessForm } from "@/components/EarlyAccessForm";
+import { useRef } from "react";
 
 export default function Home() {
+  const earlyAccessRef = useRef<HTMLDivElement>(null);
+  
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { 
@@ -24,6 +28,10 @@ export default function Home() {
       }
     }
   };
+  
+  const scrollToEarlyAccess = () => {
+    earlyAccessRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -31,6 +39,15 @@ export default function Home() {
       <section className="relative bg-gradient-to-br from-primary/5 via-background to-secondary/5 py-20 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col items-center text-center space-y-8 md:space-y-12">
+            <motion.div
+              className="text-primary font-bold text-xl mb-2"
+              initial="hidden"
+              animate="visible"
+              variants={fadeIn}
+            >
+              AICyclinder
+            </motion.div>
+            
             <motion.h1 
               className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl"
               initial="hidden"
@@ -47,7 +64,7 @@ export default function Home() {
               variants={fadeIn}
             >
               Empowering African businesses with cutting-edge AI solutions tailored for local needs. 
-              Connect, test, and deploy AI services seamlessly.
+              Connect, test, and deploy AI services seamlessly with AICyclinder.
             </motion.p>
             
             <motion.div
@@ -55,8 +72,12 @@ export default function Home() {
               animate="visible"
               variants={fadeIn}
             >
-              <Button size="lg" className="rounded-full px-8 py-6 text-lg">
-                Get Started
+              <Button 
+                size="lg" 
+                className="rounded-full px-8 py-6 text-lg"
+                onClick={scrollToEarlyAccess}
+              >
+                Request Early Access
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
@@ -120,6 +141,24 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+          
+          <motion.div 
+            className="mt-12 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="rounded-full px-8 py-6 text-lg"
+              onClick={scrollToEarlyAccess}
+            >
+              Request Early Access
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -179,6 +218,23 @@ export default function Home() {
               </motion.div>
             ))}
           </motion.div>
+          
+          <motion.div 
+            className="mt-12 text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <Button 
+              size="lg" 
+              className="rounded-full px-8 py-6 text-lg"
+              onClick={scrollToEarlyAccess}
+            >
+              Request Early Access
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -230,43 +286,39 @@ export default function Home() {
       </section>
 
       {/* Call-to-Action Section */}
-      <section className="py-20 bg-primary text-primary-foreground">
+      <section ref={earlyAccessRef} className="py-20 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="flex flex-col items-center text-center space-y-8">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              Ready to Transform Your Business with AI?
-            </motion.h2>
-            
-            <motion.p 
-              className="text-lg md:text-xl max-w-2xl opacity-90"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              Join our early access program and be among the first to leverage our AI solutions.
-            </motion.p>
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left space-y-8">
+              <motion.h2 
+                className="text-3xl md:text-4xl font-bold"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                Ready to Transform Your Business with AICyclinder?
+              </motion.h2>
+              
+              <motion.p 
+                className="text-lg md:text-xl max-w-2xl opacity-90"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.1 }}
+              >
+                Join our early access program and be among the first to leverage our AI solutions.
+              </motion.p>
+            </div>
             
             <motion.div
+              className="flex-1"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <Button 
-                variant="secondary" 
-                size="lg" 
-                className="rounded-full px-8 py-6 text-lg bg-white text-primary hover:bg-white/90"
-              >
-                Request Early Access
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <EarlyAccessForm />
             </motion.div>
           </div>
         </div>
@@ -277,7 +329,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="space-y-4">
-              <h3 className="text-lg font-semibold">AfricAI</h3>
+              <h3 className="text-lg font-semibold">AICyclinder</h3>
               <p className="text-muted-foreground text-sm">
                 Empowering African businesses with cutting-edge AI solutions.
               </p>
@@ -312,7 +364,7 @@ export default function Home() {
           </div>
           
           <div className="mt-12 pt-8 border-t text-center text-sm text-muted-foreground">
-            <p>© {new Date().getFullYear()} AfricAI. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} AICyclinder. All rights reserved.</p>
           </div>
         </div>
       </footer>
