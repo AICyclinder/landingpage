@@ -6,6 +6,16 @@ import { verifyToken } from "@/lib/auth";
 // Define the data file path
 const dataFilePath = path.join(process.cwd(), "data", "early-access.json");
 
+// Type for form submission
+type EarlyAccessSubmission = {
+  id: string;
+  name: string;
+  email: string;
+  company: string;
+  useCase: string;
+  createdAt: string;
+};
+
 export async function GET(request: NextRequest) {
   try {
     // Verify authentication
@@ -34,10 +44,10 @@ export async function GET(request: NextRequest) {
     
     // Read data file
     const fileData = fs.readFileSync(dataFilePath, "utf-8");
-    const submissions = JSON.parse(fileData);
+    const submissions = JSON.parse(fileData) as EarlyAccessSubmission[];
     
     // Sort by date (newest first)
-    submissions.sort((a: any, b: any) => 
+    submissions.sort((a: EarlyAccessSubmission, b: EarlyAccessSubmission) => 
       new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
     );
     

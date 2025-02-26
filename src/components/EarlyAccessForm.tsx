@@ -74,7 +74,7 @@ export function EarlyAccessForm() {
         </div>
         <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
         <p className="text-muted-foreground mb-6">
-          Your early access request for AICyclinder has been submitted. We'll be in touch soon!
+          Your early access request for AICyclinder has been submitted. We&apos;ll be in touch soon!
         </p>
         <Button 
           variant="outline" 
