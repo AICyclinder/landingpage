@@ -12,6 +12,7 @@ type FormState = {
   email: string;
   company: string;
   useCase: string;
+  organizationType: string;
 };
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -22,6 +23,7 @@ export function EarlyAccessForm() {
     email: "",
     company: "",
     useCase: "",
+    organizationType: "",
   });
   
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -59,6 +61,7 @@ export function EarlyAccessForm() {
         email: "",
         company: "",
         useCase: "",
+        organizationType: "",
       });
     } catch (error) {
       setStatus("error");
@@ -74,7 +77,7 @@ export function EarlyAccessForm() {
         </div>
         <h3 className="text-xl font-semibold mb-2">Thank You!</h3>
         <p className="text-muted-foreground mb-6">
-          Your early access request for AICyclinder has been submitted. We&apos;ll be in touch soon!
+          Your early access request for AI agent solutions has been submitted. We&apos;ll be in touch soon!
         </p>
         <Button 
           variant="outline" 
@@ -92,7 +95,7 @@ export function EarlyAccessForm() {
       onSubmit={handleSubmit} 
       className="bg-white/10 backdrop-blur-sm rounded-xl p-8 max-w-md w-full mx-auto"
     >
-      <h3 className="text-xl font-semibold mb-6 text-center">Request AICyclinder Early Access</h3>
+      <h3 className="text-xl font-semibold mb-6 text-center">Request Early Access to AI Agent Solutions</h3>
       
       <div className="space-y-4">
         <div className="space-y-2">
@@ -136,11 +139,30 @@ export function EarlyAccessForm() {
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="useCase">How do you plan to use our AI solutions?</Label>
+          <Label htmlFor="organizationType">Organization Type</Label>
+          <select
+            id="organizationType"
+            name="organizationType"
+            value={formData.organizationType}
+            onChange={handleChange as any}
+            required
+            className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+          >
+            <option value="" disabled>Select organization type</option>
+            <option value="business">Business</option>
+            <option value="finance">Financial Institution</option>
+            <option value="government">Government</option>
+            <option value="ngo">NGO</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div className="space-y-2">
+          <Label htmlFor="useCase">How do you plan to use our AI agent solutions?</Label>
           <Textarea
             id="useCase"
             name="useCase"
-            placeholder="Tell us about your use case..."
+            placeholder="Tell us about your AI agent needs, infrastructure requirements, or cost management goals..."
             value={formData.useCase}
             onChange={handleChange}
             rows={3}

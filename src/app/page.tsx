@@ -54,7 +54,7 @@ export default function Home() {
               animate="visible"
               variants={fadeIn}
             >
-              Unlock AI for Health, Finance & More in Africa
+              AI Agents for Businesses, Finance, Government & NGOs
             </motion.h1>
             
             <motion.p 
@@ -63,8 +63,8 @@ export default function Home() {
               animate="visible"
               variants={fadeIn}
             >
-              Empowering African businesses with cutting-edge AI solutions tailored for local needs. 
-              Connect, test, and deploy AI services seamlessly with AICyclinder.
+              Empowering organizations with custom AI agents, seamless model integration, 
+              and efficient infrastructure management for optimal performance and cost control.
             </motion.p>
             
             <motion.div
@@ -110,17 +110,17 @@ export default function Home() {
             {[
               {
                 title: "Connect",
-                description: "Connect with AI-powered services via APIs or Agents tailored for African contexts.",
+                description: "Connect with custom AI agents tailored for your specific business, financial, governmental, or NGO needs.",
                 icon: <Brain className="h-12 w-12 text-primary" />
               },
               {
                 title: "Test",
-                description: "Test AI models and optimize performance for your specific business needs.",
+                description: "Test AI models and optimize performance with seamless integration into your existing systems.",
                 icon: <CheckCircle className="h-12 w-12 text-primary" />
               },
               {
                 title: "Deploy",
-                description: "Deploy AI seamlessly for your business with ongoing support and optimization.",
+                description: "Deploy AI infrastructure locally or in the cloud with ongoing support, optimization, and cost management.",
                 icon: <Building className="h-12 w-12 text-primary" />
               }
             ].map((step, index) => (
@@ -168,7 +168,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Features</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive AI solutions designed for African businesses and challenges
+              Comprehensive AI solutions designed for businesses, financial institutions, governments, and NGOs
             </p>
           </div>
 
@@ -181,23 +181,23 @@ export default function Home() {
           >
             {[
               {
-                title: "AI for Health",
-                description: "Medical diagnosis assistance, drug analysis, and patient engagement systems tailored for African healthcare.",
-                icon: <HeartPulse className="h-10 w-10 text-primary" />
+                title: "Custom AI Agents",
+                description: "Specialized AI agents designed to automate workflows, enhance decision-making, and improve operational efficiency for your organization.",
+                icon: <Brain className="h-10 w-10 text-primary" />
               },
               {
-                title: "AI for Finance",
-                description: "Risk analysis, fraud detection, and AI-driven lending solutions for financial inclusion.",
+                title: "AI Model Integration",
+                description: "Seamless integration with leading AI models and platforms, customized to meet your specific business requirements and objectives.",
                 icon: <LineChart className="h-10 w-10 text-primary" />
               },
               {
-                title: "AI Chat & Automation",
-                description: "Intelligent bots, support systems, and workflow automation with multilingual African language support.",
-                icon: <MessageSquare className="h-10 w-10 text-primary" />
+                title: "Infrastructure Setup",
+                description: "Expert deployment of AI infrastructure, whether on-premises or cloud-based, optimized for performance, security, and scalability.",
+                icon: <Building className="h-10 w-10 text-primary" />
               },
               {
-                title: "AI Testing & Governance",
-                description: "Performance tracking, compliance checks, and security measures for responsible AI deployment.",
+                title: "Cost Management",
+                description: "Strategic optimization of AI resources and operations to maximize ROI while minimizing expenses and technical overhead.",
                 icon: <ShieldCheck className="h-10 w-10 text-primary" />
               }
             ].map((feature, index) => (
@@ -258,19 +258,19 @@ export default function Home() {
             {[
               {
                 title: "Secure Integrations",
-                description: "Enterprise-grade security for all AI integrations and data handling."
+                description: "Enterprise-grade security for all AI agents, model integrations, and data handling processes."
               },
               {
                 title: "Scalability",
-                description: "Solutions that grow with your business from startup to enterprise."
+                description: "Solutions that grow with your organization from initial deployment to enterprise-wide implementation."
               },
               {
-                title: "Affordability",
-                description: "Pricing models designed for the African market and business landscape."
+                title: "Cost Efficiency",
+                description: "Optimized resource utilization and strategic infrastructure management to control AI operational costs."
               },
               {
-                title: "Africa-focused",
-                description: "AI solutions built with African contexts, languages, and challenges in mind."
+                title: "Sector-Specific Expertise",
+                description: "Specialized knowledge in business, finance, government, and NGO requirements for AI implementation."
               }
             ].map((reason, index) => (
               <motion.div key={index} variants={fadeIn} className="flex flex-col items-center text-center p-6">
@@ -297,7 +297,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                Ready to Transform Your Business with AICyclinder?
+                Ready to Transform Your Organization with AI Agents?
               </motion.h2>
               
               <motion.p 
@@ -307,7 +307,7 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.1 }}
               >
-                Join our early access program and be among the first to leverage our AI solutions.
+                Join our early access program and be among the first to leverage our custom AI agent solutions for your organization.
               </motion.p>
             </div>
             
@@ -331,7 +331,7 @@ export default function Home() {
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">AICyclinder</h3>
               <p className="text-muted-foreground text-sm">
-                Empowering African businesses with cutting-edge AI solutions.
+                Empowering businesses, financial institutions, governments, and NGOs with cutting-edge AI agent solutions.
               </p>
             </div>
             

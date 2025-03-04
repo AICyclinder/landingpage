@@ -24,6 +24,7 @@ type EarlyAccessSubmission = {
   name: string;
   email: string;
   company: string;
+  organizationType: string;
   useCase: string;
   createdAt: string;
 };
@@ -45,12 +46,13 @@ const sendEmail = async (submission: Omit<EarlyAccessSubmission, "id" | "created
     await transporter.sendMail({
       from: '"AICyclinder Platform" <work@aicyclinder.com>',
       to: "work@aicyclinder.com",
-      subject: `New Early Access Request from ${submission.name} | AICyclinder`,
+      subject: `New Early Access Request from ${submission.name} | AI Agent Solutions`,
       html: `
-        <h2>New Early Access Request for AICyclinder</h2>
+        <h2>New Early Access Request for AI Agent Solutions</h2>
         <p><strong>Name:</strong> ${submission.name}</p>
         <p><strong>Email:</strong> ${submission.email}</p>
         <p><strong>Company:</strong> ${submission.company}</p>
+        <p><strong>Organization Type:</strong> ${submission.organizationType || "Not provided"}</p>
         <p><strong>Use Case:</strong> ${submission.useCase || "Not provided"}</p>
       `,
     });
@@ -82,6 +84,7 @@ export async function POST(request: NextRequest) {
       name: body.name,
       email: body.email,
       company: body.company,
+      organizationType: body.organizationType || "",
       useCase: body.useCase || "",
       createdAt: new Date().toISOString(),
     };
@@ -107,6 +110,7 @@ export async function POST(request: NextRequest) {
       name: body.name,
       email: body.email,
       company: body.company,
+      organizationType: body.organizationType || "",
       useCase: body.useCase || "",
     });
     
